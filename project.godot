@@ -1,0 +1,46 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+
+config_version=5
+
+[application]
+
+config/name="Anda"
+config/version="1.0.0"
+run/main_scene="res://scenes/Title.tscn"
+config/features=PackedStringArray("4.3")
+config/icon="res://icon.png"
+
+[autoload]
+
+Game="*res://src/Game.gd"
+Sfx="*res://src/Sfx.gd"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep"
+window/stretch/scale_mode="integer"
+
+[layer_names]
+
+2d_physics/layer_1="world"
+2d_physics/layer_2="hero"
+2d_physics/layer_3="enemy"
+2d_physics/layer_4="hero_hurt"
+2d_physics/layer_5="enemy_hurt"
+2d_physics/layer_6="pickup"
+2d_physics/layer_7="hero_attack"
+2d_physics/layer_8="enemy_attack"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+textures/vram_compression/import_etc2_astc=true
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true

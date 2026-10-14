@@ -1,0 +1,39 @@
+GIMP Palette
+Name: ANDA
+Columns: 8
+#
+ 26  20  35	outline
+ 46  42  59	shadow
+ 36  58  94	night_navy
+ 43  95 168	deep_blue
+127 178 229	sky
+ 61 127 166	water_dark
+111 176 201	water_light
+201 168  74	grass_gold
+168 138  47	grass_dry
+122 106  36	grass_dark
+107 143  62	green
+ 63 106  47	green_dark
+ 34  69  43	forest
+140  98  57	earth
+ 92  63  35	earth_dark
+ 58  38  22	earth_deep
+176 125  74	leather
+241 233 210	felt_cream
+217 207 177	felt_tan
+168 159 133	felt_grey
+232 185 138	skin
+184 134  90	skin_dark
+178  58  47	red
+122  34  25	red_dark
+242 140  40	fire
+255 212  92	fire_light
+246 248 251	snow
+200 212 227	snow_shadow
+138 143 154	stone
+ 86  90 102	stone_dark
+106  63 122	enemy_purple
+255 255 255	white
+216 148  74	tan
+106  74  58	fur_shadow
+246 176 122	skin_light

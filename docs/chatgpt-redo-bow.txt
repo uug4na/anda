@@ -1,0 +1,4 @@
+redo 5. Keep the RIGHT cell exactly as it is, it is correct. Fix the other two cells so the arrow points in the facing direction:
+- DOWN cell: he faces the viewer, the bow is held horizontally across his chest so we see the full curve of the bow from the front, the drawn arrow points straight at the viewer, so only a small arrowhead and the fletching are visible in front of his fist. His head stays the same size as in asset 1.
+- UP cell: back view, the bow is held horizontally so we see the back of the bow across his shoulders, the arrow points away from the viewer and is almost hidden, his drawing hand is pulled back toward his cheek.
+Same character, same palette, same head size as asset 1, three cells side by side.

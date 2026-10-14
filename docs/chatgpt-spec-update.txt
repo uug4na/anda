@@ -1,0 +1,31 @@
+SPEC UPDATE. Read this before continuing the queue.
+
+Assets 1, 2 and 3 are approved and are now the fixed reference for the whole project. Keep exactly their pixel density for everything that follows: every person the same height as Temüjin in asset 1, every tile the same density as asset 3, same outline weight, same shading. Ignore the logical pixel sizes written in the queue from now on. Size is controlled only by framing, using these rules:
+
+- People: a 3DIR sheet exactly like asset 1, on a wide canvas, figures the same height as Temüjin.
+- Bosses 22, 23 and 24 (Targhutai): same as people but on a 1536x1024 landscape canvas with the figure filling the full height, so he is about twice Temüjin's height.
+- Mounted figures (9, 10, 28, 29): fill the canvas height, horse plus rider visibly taller than Temüjin on foot.
+- Single large objects (gers, trees, carts, haystack, ovoo, boulders): fill the canvas as asset 2 did.
+- Small things: only ever inside a 4x4 grid of equal cells. Never draw a small thing alone on the canvas.
+- UI frame tiles (57, 58, 59, 60): fill the canvas; the border is one third of the tile width; the centre is flat.
+- Cutscenes: unchanged.
+
+Replace these queue items:
+
+19. animal_small_grid01 | 4x4 grid, 16 equal cells, one sprite per cell, centred, feet on the bottom row of its cell | Row 1: tan hunting dog facing down, facing up, facing right, barking facing right. Row 2: fat cream sheep with a dark face: down, up, right, grazing. Row 3: brown goat: down, up, right, marmot standing upright. Row 4: fish shadow seen from above (flat 243a5e silhouette) swimming straight, same fish curved mid turn, marmot digging, black and white magpie.
+
+30 and 31: skip, covered by 19.
+
+39. prop_small_grid01 | 4x4 grid, 16 equal cells | Row 1: campfire loop frames 1 to 4, ring of stones, flames fire f28c28 and fire light ffd45c. Row 2: open red ger door swung aside showing a dark doorway, cooking tripod of three poles with a black iron pot, stacked split firewood, pile of grey stones. Row 3: wooden barrel, clay pot, broken clay pot shards, woven basket. Row 4: closed wooden chest with iron bands, open chest showing gold, skull and bones pile, clay jug.
+
+37, 40, 47 and 48: skip, covered by 39.
+
+45. prop_banner_10states | 2 rows of 5 equal cells on a 1536x1024 landscape canvas | The white nine tail banner: a tall dark wooden pole with a spear point, a wooden disc below the point from which white yak tails hang. Cell 1 has zero tails, cell 2 has one, and so on to cell 10 with nine tails fanned in a ring. The pole is identical in every cell and fills the cell height.
+
+46. prop_torch_4f | 4 equal cells side by side on a square canvas | A slim torch on a short pole stuck in the ground, four frames of flame flicker, torch about one third of the cell height standing on the bottom row.
+
+52. prop_bush_grass_grid | 4x4 grid, 16 equal cells | Row 1: three round bush variants, one dead bush. Row 2: tall grass frame A upright, tall grass frame B leaning right, two small flower clumps. Row 3: river reed clump with brown cattail heads, reed clump variant, mushroom cluster, fallen branch. Row 4: four small rock variants.
+
+53: skip, covered by 52.
+
+Everything else in the queue stays as written. Continue with asset 4.

@@ -1,0 +1,41 @@
+Use the attached image only as the reference for art style, pixel density, outline weight, palette and, when the subject is a person, for the character design. Do not reproduce the attached image. Create a NEW image of the ASSET described at the end, following every rule below.
+
+== STYLE ==
+16-bit pixel art, top-down 3/4 view in the style of The Legend of Zelda: Link's Awakening and Stardew Valley. Crisp square pixels of equal size, no anti-aliasing, no blur, no gradients, no glow, no photo textures, no dithering. Limited palette of at most 32 colours (listed below). 1 pixel dark outline (#1a1423) around every subject. Flat shading, two tones per colour, single light source from the top left. Transparent background PNG. If transparency is impossible, use a flat solid magenta background #FF00FF and no other magenta in the image.
+
+Each asset lists a LOGICAL size such as "32x32". Draw at that logical resolution and render it scaled up with nearest neighbour so each logical pixel is one crisp square block, centred, filling as much of the canvas as possible. Use a 1024x1024 canvas by default and 1536x1024 landscape for strips wider than 3:1 and for cutscenes.
+
+For multi-cell sheets: cells are placed left to right with no gap, no padding, no divider lines. All cells in one sheet are the same size. Characters stand with feet on the bottom row of their cell, horizontally centred in the cell. "3DIR" means three cells: facing DOWN toward the viewer, facing UP (back view), facing RIGHT (side view). Same pose in all three.
+
+== FRAMING RULES (these decide size, the logical sizes below are only for proportion) ==
+- People: a 3DIR sheet exactly like asset 1, on a wide canvas, figures the same height as Temüjin.
+- Bosses 22, 23 and 24 (Targhutai): same as people but on a 1536x1024 landscape canvas with the figure filling the full height, so he is about twice Temüjin's height.
+- Mounted figures (9, 10, 28, 29): fill the canvas height, horse plus rider visibly taller than Temüjin on foot.
+- Single large objects (gers, trees, carts, haystack, ovoo, boulders): fill the canvas as asset 2 did.
+- Small things: only ever inside a 4x4 grid of equal cells. Never draw a small thing alone on the canvas.
+- UI frame tiles (57, 58, 59, 60): fill the canvas; the border is one third of the tile width; the centre is flat.
+- Cutscenes: unchanged.
+
+== PALETTE (hex) ==
+outline 1a1423, shadow 2e2a3b, night navy 243a5e, deep blue 2b5fa8, sky 7fb2e5, water dark 3d7fa6, water light 6fb0c9, grass gold c9a84a, grass dry a88a2f, grass dark 7a6a24, green 6b8f3e, green dark 3f6a2f, forest 22452b, earth 8c6239, earth dark 5c3f23, earth deep 3a2616, leather b07d4a, felt cream f1e9d2, felt tan d9cfb1, felt grey a89f85, skin e8b98a, skin dark b8865a, red b23a2f, red dark 7a2219, fire f28c28, fire light ffd45c, snow f6f8fb, snow shadow c8d4e3, stone 8a8f9a, stone dark 565a66, enemy purple 6a3f7a, white ffffff.
+
+== WORLD AND COSTUME NOTES ==
+Clothing is the Mongol deel: a long wrap robe with a cloth sash at the waist. Felt boots with upturned toes. Pointed felt hats with upturned fur brims. Men shave the crown and wear two braided loops behind the ears. Bows are short recurve composite bows. Armour is lamellar: small overlapping leather or iron plates. Gers (yurts) are round white felt tents with a domed roof, a central roof ring, rope bands around the walls and a red wooden door that faces DOWN toward the viewer. Horses are small, stocky and shaggy. The steppe is gold green grass under a huge sky.
+
+== CAST (reuse these descriptions wherever the name appears) ==
+TEMUJIN: 16 year old youth, lean, shaved crown with two dark braided loops, faded deep blue deel (2b5fa8) with red sash (b23a2f), dark felt boots, small recurve bow on his back, determined face.
+TEMUJIN BOY: the same at age 9, smaller, no bow, ragged grey deel.
+HOELUN: his mother, around 40, strong and stern, dark earth deel (5c3f23), dark red headscarf, carries a tall thin pole.
+BOORCHU: cheerful young man, green deel (6b8f3e), tan sash, long lasso pole (a thin pole with a rope loop at the end).
+SORKAN SHIRA: kind middle aged man, grey felt deel, round face, no hat, wool bits on his clothes.
+BEGTER: Temüjin's half brother, same age, stocky, smug grin, brown deel, holds a fish.
+TARGHUTAI: fat Tayichiud chief, fox fur hat, rich red deel with gold trim, long whip, hunting horn on his belt.
+TAYICHIUD SWORDSMAN: stocky warrior, brown leather lamellar vest over grey deel, fur brim hat, curved saber, round hide shield.
+TAYICHIUD ARCHER: lighter warrior, grey deel, no shield, quiver on hip, recurve bow.
+HUNTER: lean tracker, fur hat, fur vest, short spear, holds a rope lead (dog is a separate asset).
+HERDER MAN: plain tan deel, felt hat. HERDER WOMAN: plain cream deel, blue headscarf. CHILD: small, ragged deel, bare head.
+
+ASSET: comp_jamukha_walk_down_6f
+FRAMING: 6 equal cells side by side on a 1536x1024 landscape canvas, the figure the same height as the reference
+SUBJECT: JAMUKHA: a handsome young man in a white deel with a blue sash, braids, confident smile, a curved sword at his hip, walking toward the viewer, six frames of one walk cycle in order: contact, down, passing, contact (other foot), down, passing. Clothing, weapon, head and colours identical in every frame. Transparent background.
+Canvas 1536x1024, transparent background PNG. No text, no labels, no watermark, no grid lines.

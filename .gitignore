@@ -1,0 +1,8 @@
+# Godot import cache and exported builds
+.godot/
+build/
+# Raw AI downloads (1024 px sources, ~270 MB); the prompts and the generation log stay
+assets/raw/**/*.png
+# OS noise
+.DS_Store
+*.tmp
