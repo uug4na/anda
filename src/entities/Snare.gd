@@ -39,6 +39,6 @@ func _on_body(b: Node) -> void:
 	b.stun(1.6)
 	b.call_deferred("take_hit", 2, global_position)
 	Vfx.play(get_parent(), "dust", global_position)
-	Sfx.play("hit")
+	Sfx.play("hit", -4.0)
 	set_deferred("monitoring", false)
 	queue_free()

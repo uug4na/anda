@@ -8,6 +8,7 @@ var fish_label: Label
 var roots_label: Label
 var objective: Label
 var survive: Label
+var comp_plate: Panel
 var comp_icon: TextureRect
 var comp_label: Label
 var comp_shown := ""
@@ -39,12 +40,14 @@ func _build() -> void:
 		hearts.append(h)
 	arrow_label = _counter(Sheets.cell("ui/ui_hud_grid.png", 16, 3, 4), Vector2(8, 28), 16)
 	tail_label = _counter(Sheets.cell("ui/ui_hud_grid.png", 16, 12, 4), Vector2(8, 48), 16)
-	fish_label = _counter(Sheets.cell("items/item_weapons_grid01.png", 48, 14, 4), Vector2(548, 6), 24)
-	roots_label = _counter(Sheets.cell("items/item_weapons_grid01.png", 48, 13, 4), Vector2(596, 6), 24)
+	# Food sits in a column on the right, icons at the margin and the count to their left, so a
+	# growing number walks inward instead of off the screen.
+	fish_label = _counter(Sheets.cell("items/item_weapons_grid01.png", 48, 14, 4), Vector2(608, 6), 24, true)
+	roots_label = _counter(Sheets.cell("items/item_weapons_grid01.png", 48, 13, 4), Vector2(608, 34), 24, true)
 	objective = Label.new()
 	objective.label_settings = Game.label_settings(Color(0.95, 0.91, 0.82), 2)
-	objective.position = Vector2(100, 4)
-	objective.size = Vector2(440, 48)
+	objective.position = Vector2(124, 4)
+	objective.size = Vector2(392, 48)
 	objective.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	objective.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	add_child(objective)
@@ -54,15 +57,29 @@ func _build() -> void:
 	survive.size = Vector2(200, 20)
 	survive.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	add_child(survive)
+	# The companion's face sits in a small plate clear of the bottom edge; the portraits are bust
+	# shots, so without a frame the cut-off shoulders look like they run off the screen.
+	comp_plate = Panel.new()
+	var plate := StyleBoxFlat.new()
+	plate.bg_color = Color(0.1, 0.08, 0.14, 0.85)
+	plate.border_color = Color(0.79, 0.66, 0.29)
+	plate.set_border_width_all(1)
+	plate.set_corner_radius_all(3)
+	comp_plate.add_theme_stylebox_override("panel", plate)
+	comp_plate.position = Vector2(8, 292)
+	comp_plate.size = Vector2(60, 60)
+	comp_plate.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	comp_plate.visible = false
+	add_child(comp_plate)
 	comp_icon = TextureRect.new()
-	comp_icon.position = Vector2(8, 296)
-	comp_icon.custom_minimum_size = Vector2(64, 64)
+	comp_icon.position = Vector2(2, 2)
+	comp_icon.size = Vector2(56, 56)
 	comp_icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	comp_icon.stretch_mode = TextureRect.STRETCH_SCALE
-	add_child(comp_icon)
+	comp_plate.add_child(comp_icon)
 	comp_label = Label.new()
 	comp_label.label_settings = Game.label_settings(Color(0.95, 0.91, 0.82), 2)
-	comp_label.position = Vector2(76, 300)
+	comp_label.position = Vector2(76, 294)
 	add_child(comp_label)
 	boss_name = Label.new()
 	boss_name.label_settings = Game.label_settings(Color(0.95, 0.91, 0.82), 2)
@@ -88,7 +105,7 @@ func _build() -> void:
 	boss_name.visible = false
 
 
-func _counter(icon: Texture2D, pos: Vector2, icon_size: int) -> Label:
+func _counter(icon: Texture2D, pos: Vector2, icon_size: int, number_left := false) -> Label:
 	var tr := TextureRect.new()
 	tr.texture = icon
 	tr.position = pos
@@ -98,7 +115,13 @@ func _counter(icon: Texture2D, pos: Vector2, icon_size: int) -> Label:
 	add_child(tr)
 	var l := Label.new()
 	l.label_settings = Game.label_settings(Color(0.95, 0.91, 0.82), 2)
-	l.position = pos + Vector2(icon_size + 4, (icon_size - 18) / 2.0)
+	if number_left:
+		l.size = Vector2(60, icon_size)
+		l.position = Vector2(pos.x - 4 - 60, pos.y)
+		l.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+		l.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	else:
+		l.position = pos + Vector2(icon_size + 4, (icon_size - 18) / 2.0)
 	add_child(l)
 	return l
 
@@ -141,6 +164,7 @@ func _process(delta: float) -> void:
 	var shown := comp + "|" + Settings.key_name("ability")
 	if shown != comp_shown:
 		comp_shown = shown
+		comp_plate.visible = comp != ""
 		if comp == "":
 			comp_icon.texture = null
 			comp_label.text = ""

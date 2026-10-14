@@ -273,7 +273,7 @@ func _start_attack() -> void:
 	hitshape.disabled = false
 	# The arc sweeps across the front of the hero; alternate the sweep so two hits read as a combo.
 	SlashArc.spawn(get_parent(), global_position + fwd * 10.0 + Vector2(0, -26), fwd.angle(), combo, 38.0 if last else 32.0)
-	Sfx.play("swoosh", 2.0 if last else 0.0)
+	Sfx.play("swoosh", 0.0 if last else -3.0)
 
 
 func _attack_state(delta: float) -> void:
@@ -397,7 +397,7 @@ func take_hit(dmg: int, from: Vector2) -> void:
 	Game.debug("f%d hero takes %d, hp %d (state %d)" % [Engine.get_physics_frames(), dmg, Game.hp - dmg, state])
 	Game.damage_hero(dmg)
 	Vfx.play(get_parent(), "burst", global_position + Vector2(0, -30))
-	Sfx.play("hurt")
+	Sfx.play("hurt", -1.0)
 	shake(4.0)
 	var away := global_position - from
 	var knock := (away.normalized() if away.length() > 1.0 else -_facing_vector()) * 240.0

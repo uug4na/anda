@@ -428,7 +428,7 @@ func _strike(direction: Vector2) -> void:
 			hitbox.position = fwd * 56.0 + Vector2(0, -40)
 			hitshape.disabled = false
 			SlashArc.spawn(get_parent(), global_position + fwd * 30.0 + Vector2(0, -40), fwd.angle(), 1 if flip else -1, 70.0, Color(1.0, 0.6, 0.5))
-			Sfx.play("swoosh", -4.0)
+			Sfx.play("swoosh", -1.0)
 		_:
 			velocity = fwd * p.lunge
 			hitbox.position = fwd * 22.0 + Vector2(0, -cell / 4.0)
@@ -436,7 +436,7 @@ func _strike(direction: Vector2) -> void:
 			Vfx.play(get_parent(), "dust", global_position + Vector2(0, -6))
 			if p.get("slash", false):
 				SlashArc.spawn(get_parent(), global_position + fwd * 8.0 + Vector2(0, -26), fwd.angle(), 1 if flip else -1, 30.0, Color(1.0, 0.6, 0.5))
-			Sfx.play("swoosh", -6.0)
+			Sfx.play("swoosh", -3.0)
 
 
 ## A fast answer to a flurry: a shortened wind-up straight into the usual strike.
@@ -489,7 +489,7 @@ func take_hit(dmg: int, from: Vector2) -> void:
 	flash = 0.12
 	Game.debug("%s takes %d, hp %d" % [p.name, dmg, hp])
 	Vfx.play(get_parent(), "spark", global_position + Vector2(0, -cell / 3.0))
-	Sfx.play("hit")
+	Sfx.play("hit_boss" if is_boss else "hit", -2.0, 0.12)
 	Game.hit_stop()
 	if hero != null and hero.has_method("shake"):
 		hero.shake(2.5)

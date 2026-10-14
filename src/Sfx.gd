@@ -1,7 +1,7 @@
 extends Node
 ## Sound and music. Autoloaded as "Sfx".
-## Effects are recorded samples in assets/audio/sfx: name.ogg, or name_1.ogg, name_2.ogg ... picked at
-## random for variety. Any name without a file falls back to a small synthesised sound.
+## Effects are recorded samples in assets/audio/sfx: name.ogg (or .wav), or name_1.ogg, name_2.ogg ...
+## picked at random for variety. Any name without a file falls back to a small synthesised sound.
 ## Music is one track per map in assets/audio/music/<map>.mp3 (or .ogg), crossfaded on change.
 
 const RATE := 22050

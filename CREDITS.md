@@ -29,9 +29,10 @@ loudness matched; nothing else was changed.
 
 ## Sound effects
 
-Sword, hits, falls, cloth, footsteps, the boss gong and the interface clicks are from the Kenney
-packs Impact Sounds, RPG Audio and Interface Sounds (kenney.nl), released under CC0. The arrow,
-the cooking fire and the wind are synthesised in the game.
+Hits, falls, cloth, footsteps, the boss gong and the interface clicks are from the Kenney packs
+Impact Sounds, RPG Audio and Interface Sounds (kenney.nl), released under CC0; the sword hits mix
+a knife slice over a soft thud. The sword swing, the arrow, the cooking fire and the wind are
+synthesised in the game.
 
 ## Fonts
 

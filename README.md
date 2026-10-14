@@ -117,9 +117,11 @@ python3 -I tools/contact_sheet.py
 OpenAI Images API (key in `~/.config/anda/openai.env`). `tools/make_music.py` regenerates the
 placeholder music.
 
-Audio: effects are looked up as `assets/audio/sfx/<name>.ogg` or numbered takes `<name>_1.ogg`,
-`<name>_2.ogg` (swoosh, hit, hurt, dodge, ui, pickup, enemy_die, boss, step); a name with no file
-falls back to a synthesised sound (arrow, cook, wind). Music is `assets/audio/music/<map>.mp3`
+Audio: effects are looked up as `assets/audio/sfx/<name>.ogg` (or .wav) or numbered takes
+`<name>_1.ogg`, `<name>_2.ogg` (hit, hit_boss, hurt, dodge, ui, pickup, enemy_die, boss, step); a
+name with no file falls back to a synthesised sound (swoosh, arrow, cook, wind). The fight sounds
+are mixed from Kenney samples by `tools/gen_sfx.sh` (a blade slice over a soft thud for hits, a
+heavier thud for bosses, a body drop for deaths). Music is `assets/audio/music/<map>.mp3`
 (or .ogg) per map plus `title` and `boss`, crossfaded on change. Attribution is in CREDITS.md.
 
 ## Test hooks
